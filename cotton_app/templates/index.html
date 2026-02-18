@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cotton Leaf Disease Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #2E7D32;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+        }
+
+        button {
+            background: #2E7D32;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1B5E20;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #E8F5E9;
+            border-radius: 10px;
+            font-weight: bold;
+            color: #1B5E20;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Cotton Leaf Disease Detection</h1>
+    <p>Upload an image of a cotton leaf to predict the disease</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result">
+        Prediction: {{ prediction }}
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
